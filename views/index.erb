@@ -1,0 +1,24 @@
+<h1>Look up words</h1>
+
+  <p>Here are your words:</p>
+
+  <ul>
+    <% @words.each() do |term, definition| %>
+    <li><%= term.meaning() %></li>
+    <li><%= definition.meaning() %></li>
+    <% end %>
+  </ul>
+
+
+
+<form action="/success" method="post">
+  <div class="form-group">
+    <label for="term">Enter your word</label>
+    <input id="term" name="term" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="definition">Enter your definition</label>
+    <input id="definition" name="definition" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>
